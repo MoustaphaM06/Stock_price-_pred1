@@ -1,0 +1,22 @@
+# Mac system files
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model files
+*.pkl
+*.joblib
+
+# Large datasets (optional — remove if you want CSVs public)
+Data/*.csv
