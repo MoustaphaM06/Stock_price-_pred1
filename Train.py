@@ -6,9 +6,8 @@ import joblib
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 
-df=pd.read_csv("Data/PRJDS.csv")
-
-feature_cols = ["Open", "High", "Low", "Close", "Volume", "MA5", "MA10"]
+df=pd.read_csv("PRJDS.csv")
+feature_cols = ["Open", "High", "Low", "Close", "Volume", "MA5", "MA10","return_1","log_return","volatility_10"]
 
 split_idx = int(0.8 * len(df))
 
@@ -26,10 +25,10 @@ sgd_model = Pipeline([
         loss="squared_error",
         learning_rate="invscaling",
         eta0=0.01,
-        alpha=1e-4,          
+        alpha=0.0001,          
         max_iter=20000,
-        tol=1e-6,
-        random_state=42
+        tol=0.000006,
+    
     ))
 ])
 
